@@ -1,17 +1,20 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scan = new Scanner(System.in);
+        // initial prints
+        System.out.println("Welcome to AP Java getter and setter method generator!");
+        System.out.print("Please enter the name of your instance variable: ");
+        String name = scan.nextLine();
+        System.out.print("Please enter the data type of this variable: ");
+        String type = scan.nextLine();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        // prints getter method
+        System.out.println("// getter for " + name + " \\\\");
+        System.out.println("public " + type + " get" + name + "()\n{\n   return " + name + ";\n}");
+        // prints setter method
+        System.out.println("// setter for " + name + " \\\\");
+        System.out.println("public void set" + name + "(" + type + " new" + name + ")\n{\n   " + name + " = new" + name + ";\n}");
     }
 }
